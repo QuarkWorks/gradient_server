@@ -1,0 +1,11 @@
+pandas
+scipy
+numpy
+tensorflow
+scikit-learn
+scikit-image
+pillow
+keras
+opencv-python
+filterpy
+numba
