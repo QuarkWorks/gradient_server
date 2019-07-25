@@ -1,14 +1,11 @@
 import tensorflow as tf
-from tensorflow import keras
 
-from tensorflow.python.keras.utils.generic_utils import CustomObjectScope
-from tensorflow.keras.layers import ReLU
-from tensorflow.keras.layers import DepthwiseConv2D
+import keras
+from keras.layers import ReLU
+from keras.layers import DepthwiseConv2D
+from keras.utils import CustomObjectScope
+from keras.applications.mobilenet_v2 import MobileNetV2
 
-# from tensorflow.python.keras.applications.mobilenet import relu6
-# from tensorflow.python.keras.applications.mobilenet import DepthwiseConv2D
-import numpy as np
-import os
 import argparse
 
 #Parse input parameters
@@ -22,9 +19,9 @@ VERSION = args.VERSION
 
 
 tf.logging.set_verbosity(tf.logging.ERROR)
-
-tf.VERSION
 print(tf.VERSION)
+print(keras.__version__)
+
 
 with CustomObjectScope(
         {'relu6': ReLU, 'DepthwiseConv2D': DepthwiseConv2D}):
