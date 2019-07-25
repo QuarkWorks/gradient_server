@@ -7,6 +7,7 @@ from keras.utils import CustomObjectScope
 from keras.applications.mobilenet_v2 import MobileNetV2
 
 import argparse
+import os
 
 #Parse input parameters
 parser = argparse.ArgumentParser(description='Fashion MNIST Keras Model')
