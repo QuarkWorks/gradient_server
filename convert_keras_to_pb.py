@@ -1,9 +1,9 @@
 import tensorflow as tf
 from tensorflow import keras
 
-from keras.utils.generic_utils import CustomObjectScope
-from keras.layers import ReLU
-from keras.layers import DepthwiseConv2D
+from tensorflow.python.keras.utils.generic_utils import CustomObjectScope
+from tensorflow.python.keras.layers import ReLU
+from tensorflow.python.keras.layers import DepthwiseConv2D
 import numpy as np
 import os
 import argparse
