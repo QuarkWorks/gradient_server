@@ -23,6 +23,9 @@ VERSION = args.VERSION
 
 tf.logging.set_verbosity(tf.logging.ERROR)
 
+tf.VERSION
+print(tf.VERSION)
+
 with CustomObjectScope(
         {'relu6': ReLU, 'DepthwiseConv2D': DepthwiseConv2D}):
     nsfw_model = keras.models.load_model('./models/nsfw_mobilenet2.224x224.h5')
