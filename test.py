@@ -4,6 +4,7 @@ import numpy as np
 import os
 import argparse
 import shutil
+
 tf.logging.set_verbosity(tf.logging.ERROR)
 
 #Parse input parameters
