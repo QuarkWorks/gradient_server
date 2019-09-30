@@ -1,0 +1,48 @@
+conda env: gradient_server
+
+gradient CLI commands 
+pip install -U gradient
+pip install -U --pre gradient
+
+
+
+gradient experiments run singlenode \
+  --name gradient_server \
+  --projectId prwj44a35 \
+  --experimentEnv "{\"EPOCHS\":5}" \
+  --container tensorflow/tensorflow:1.9.0-gpu \
+  --machineType K80 \
+  --command "python test.py --modelPath /storage/model --version 1" \
+  --modelType Tensorflow \
+  --modelPath "/storage/model"
+  
+  
+  
+  gradient experiments run singlenode \
+    --name gradient_server_2 \
+    --projectId prwj44a35 \
+    --container container tensorflow/tensorflow:1.8.0-gpu \
+    --machineType K80 \
+    --command "python test.py --modelPath /storage/model --version 1" \
+    --workspaceUrl https://github.com/QuarkWorks/gradient_server.git \
+    --modelType Tensorflow \
+	--modelPath "/storage/model"
+  
+  
+  gradient experiments run singlenode --name gradient_server --projectId prd5un7x0 --container tensorflow/tensorflow:1.8.0-gpu --machineType K80 --command "python test.py --modelPath /storage/model --version 1" --workspaceUrl s3://ps-projects/prd5un7x0/8701ff2c/gradient_server.zip --experimentEnv '{"EPOCHS": 5}' --ports 5000:5000 --modelType Tensorflow --modelPath /storage/model
+  
+  
+  
+  gradient experiments run singlenode \
+    --name fmnidst \
+    --projectId primjsd2g \
+    --experimentEnv "{\"EPOCHS\":5}" \
+    --container tensorflow/tensorflow:1.9.0-gpu \
+    --machineType K80 \
+    --command "python train.py --modelPath /storage/model --version 1" \
+    --modelType Tensorflow \
+    --modelPath "/storage/model"
+	
+	
+	
+	gradient experiments run singlenode --name fmnist --projectId pr2j8m1tc --container tensorflow/tensorflow:1.9.0-gpu --machineType K80 --command "python train.py --modelPath /storage/model --version 1" --experimentEnv '{"EPOCHS": 5}' --modelType Tensorflow --modelPath /storage/model
