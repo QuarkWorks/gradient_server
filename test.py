@@ -17,10 +17,13 @@ MODEL_DIR = args.MODEL_DIR
 VERSION = args.VERSION
 
 
-print(os.listdir(MODEL_DIR))
+#print(os.listdir(MODEL_DIR))
 
 #shutil.rmtree(MODEL_DIR)
 print(os.listdir('./storage'))
+
+print(os.listdir('./'))
+
 
 # #Download Fashion MNIST dataset and split it for train and test
 # fashion_mnist = keras.datasets.fashion_mnist
