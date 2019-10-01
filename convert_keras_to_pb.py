@@ -1,7 +1,8 @@
 import tensorflow as tf
 
 import keras
-from keras.layers import ReLU
+
+#from keras.layers import ReLU
 from keras.layers import DepthwiseConv2D
 from keras.utils import CustomObjectScope
 from keras.applications.mobilenet_v2 import MobileNetV2
@@ -11,6 +12,8 @@ import shutil
 import os
 from os.path import expanduser, join
 
+def relu6(x):
+    return keras.relu(x, max_value=6)
 
 tf.logging.set_verbosity(tf.logging.ERROR)
 
@@ -23,13 +26,12 @@ args = parser.parse_args()
 MODEL_DIR = args.MODEL_DIR
 VERSION = args.VERSION
 
-
 tf.logging.set_verbosity(tf.logging.ERROR)
 print(tf.VERSION)
 print(keras.__version__)
 
 with CustomObjectScope(
-        {'relu6': ReLU, 'DepthwiseConv2D': DepthwiseConv2D}):
+        {'relu6': relu6, 'DepthwiseConv2D': DepthwiseConv2D}):
     nsfw_model = keras.models.load_model('./models/nsfw_mobilenet2.224x224.h5')
 
 #Save model
