@@ -5,7 +5,7 @@ import keras
 #from keras.layers import ReLU
 from keras.layers import DepthwiseConv2D
 from keras.utils import CustomObjectScope
-from keras.applications.mobilenet_v2 import MobileNetV2
+#from keras.applications.mobilenet_v2 import MobileNetV2
 
 import argparse
 import shutil
