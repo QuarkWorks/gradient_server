@@ -19,7 +19,7 @@ VERSION = args.VERSION
 
 print(os.listdir(MODEL_DIR))
 
-#shutil.rmtree(MODEL_DIR)
+shutil.rmtree(MODEL_DIR)
 print(os.listdir('./storage'))
 
 # #Download Fashion MNIST dataset and split it for train and test
