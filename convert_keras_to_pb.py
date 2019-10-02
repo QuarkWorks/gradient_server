@@ -3,25 +3,14 @@
 
 import tensorflow as tf
 
-
-#from keras_applications.mobilenet import relu6
-# from keras.layers import DepthwiseConv2D
-# from keras.utils import CustomObjectScope
-#from keras.applications.mobilenet_v2 import MobileNetV
-
-
-
 import argparse
 import shutil
 import os
 from os.path import expanduser, join
 
 
-
-#tf.logging.set_verbosity(tf.logging.ERROR)
-
 #Parse input parameters
-parser = argparse.ArgumentParser(description='Fashion MNIST Keras Model')
+parser = argparse.ArgumentParser(description='MobileNet Keras Model')
 parser.add_argument('--modelPath', type=str, dest='MODEL_DIR', default="./export", help='location to store the model artifacts')
 parser.add_argument('--version', type=str, dest='VERSION', default="1", help='model version')
 args = parser.parse_args()
@@ -41,7 +30,7 @@ with tf.keras.utils.CustomObjectScope(
         {'relu6': tf.compat.v2.keras.layers.ReLU, 'DepthwiseConv2D': tf.keras.layers.DepthwiseConv2D}):
     nsfw_model = tf.keras.models.load_model('./models/nsfw_mobilenet2.224x224.h5')
 
-nsfw_model.summary()
+#nsfw_model.summary()
 
 
 if not os.path.exists(MODEL_DIR):
