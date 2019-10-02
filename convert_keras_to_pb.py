@@ -19,8 +19,8 @@ MODEL_DIR = args.MODEL_DIR
 VERSION = args.VERSION
 
 #tf.logging.set_verbosity(tf.logging.ERROR)
-print(tf.version)
-print(tf.keras.__version__)
+#print(tf.version)
+#print(tf.keras.__version__)
 
 
 
